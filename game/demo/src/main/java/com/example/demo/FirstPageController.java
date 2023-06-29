@@ -30,22 +30,40 @@ public class FirstPageController implements Initializable{
 
     @FXML
     void signupLabel(MouseEvent event) throws IOException {
-        Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
-        Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene=new Scene(parent,1550,800);
-        stage.setScene(scene);
-        stage.setTitle("login");
-        stage.show();
+        if (event.getEventType().equals(MouseEvent.MOUSE_ENTERED)){
+            signupLabel.setTranslateX(3);
+            signupLabel.setTranslateY(3);
+        }else if (event.getEventType().equals(MouseEvent.MOUSE_EXITED)){
+            signupLabel.setTranslateX(-3);
+            signupLabel.setTranslateY(-3);
+
+        }else if (event.getEventType().equals(MouseEvent.MOUSE_CLICKED)){
+            Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("signup.fxml")));
+            Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene=new Scene(parent,1550,800);
+            stage.setScene(scene);
+            stage.setTitle("signup");
+            stage.show();
+        }
+
     }
 
     @FXML
     void loginLabel(MouseEvent event) throws IOException {
-        Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("signup.fxml")));
-        Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene=new Scene(parent,1550,800);
-        stage.setScene(scene);
-        stage.setTitle("signup");
-        stage.show();
+        if (event.getEventType().equals(MouseEvent.MOUSE_ENTERED)){
+            loginLabel.setTranslateX(3);
+            loginLabel.setTranslateY(3);
+        }else if (event.getEventType().equals(MouseEvent.MOUSE_EXITED)){
+            loginLabel.setTranslateX(-3);
+            loginLabel.setTranslateY(-3);
+        }else if (event.getEventType().equals(MouseEvent.MOUSE_CLICKED)){
+            Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
+            Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene=new Scene(parent,1550,800);
+            stage.setScene(scene);
+            stage.setTitle("login");
+            stage.show();
+        }
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

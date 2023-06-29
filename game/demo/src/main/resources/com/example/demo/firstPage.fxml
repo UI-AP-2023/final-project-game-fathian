@@ -16,23 +16,23 @@
    <children>
       <ImageView fx:id="loginPage" fitHeight="800.0" fitWidth="1550.0" pickOnBounds="true">
          <image>
-            <Image url="@Clash-screen-850x442.jpg" />
+            <Image url="@firstPage.png" />
          </image>
       </ImageView>
-      <Label fx:id="loginLabel" alignment="CENTER" layoutX="618.0" layoutY="450.0" onMouseClicked="#loginLabel" onMouseEntered="#loginLabel" onMouseExited="#loginLabel" prefHeight="67.0" prefWidth="190.0" text="login" textFill="#8d2180eb">
+      <Label fx:id="loginLabel" alignment="CENTER" layoutX="164.0" layoutY="373.0" onMouseClicked="#loginLabel" onMouseEntered="#loginLabel" onMouseExited="#loginLabel" prefHeight="67.0" prefWidth="190.0" text="login" textFill="#cc9863">
          <font>
             <Font name="Curlz MT" size="55.0" />
          </font>
          <effect>
-            <DropShadow color="#bc5b98" height="6.22" offsetX="10.0" offsetY="10.0" radius="4.165" spread="0.15" width="12.44" />
+            <DropShadow color="#96772d" height="9.33" offsetX="10.0" offsetY="10.0" radius="4.9425" spread="0.15" width="12.44" />
          </effect>
       </Label>
-      <Label fx:id="signupLabel" alignment="CENTER" layoutX="618.0" layoutY="366.0" onMouseClicked="#signupLabel" onMouseEntered="#signupLabel" onMouseExited="#signupLabel" prefHeight="67.0" prefWidth="190.0" text="signup" textFill="#8d2180eb">
+      <Label fx:id="signupLabel" alignment="CENTER" layoutX="157.0" layoutY="236.0" onMouseClicked="#signupLabel" onMouseEntered="#signupLabel" onMouseExited="#signupLabel" prefHeight="67.0" prefWidth="190.0" text="signup" textFill="#cc9863eb">
          <font>
             <Font name="Curlz MT" size="55.0" />
          </font>
          <effect>
-            <DropShadow color="#972d62" height="18.66" offsetX="10.0" offsetY="10.0" radius="9.415" />
+            <DropShadow color="#96772d" height="18.66" offsetX="10.0" offsetY="10.0" radius="9.415" />
          </effect>
       </Label>
    </children>
