@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class SystemGame {
     public  static ArrayList<Map> maps = new ArrayList<>();
+    public static ArrayList<Player> players = new ArrayList<>();
     public SystemGame() throws URISyntaxException {
         HelloApplication helloApplication = new HelloApplication();
         Map map1 = new Map(helloApplication.getClass().getResource("mapb1.png").toURI().toString(),5,50);

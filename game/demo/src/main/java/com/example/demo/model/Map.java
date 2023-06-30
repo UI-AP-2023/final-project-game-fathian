@@ -8,6 +8,7 @@ public class Map {
     ArrayList<Building> buildings = new ArrayList<>();
     int level;
     int heroLimits;
+    String mapId;
 
 
     public Map(String urlImage,int level,int heroLimits) {

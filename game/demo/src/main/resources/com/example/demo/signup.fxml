@@ -28,8 +28,7 @@
          </font>
       </Label>
       <TextField fx:id="passwordTf" layoutX="301.0" layoutY="179.0" />
-      <Button fx:id="signupButton" layoutX="167.0" layoutY="682.0" mnemonicParsing="false" onMouseClicked="#signupButton" onMouseEntered="#signupButton" onMouseExited="#signupButton" text="signup" />
-      <ImageView fx:id="selectedMap" fitHeight="150.0" fitWidth="200.0" layoutX="279.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <ImageView fx:id="selectedImage" fitHeight="150.0" fitWidth="200.0" layoutX="279.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true" visible="false" />
       <Button fx:id="btNext" alignment="CENTER" contentDisplay="CENTER" layoutX="716.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#btNext" opacity="0.3" prefHeight="58.0" prefWidth="43.0" textAlignment="CENTER" visible="false">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
@@ -72,5 +71,10 @@
             </ImageView>
          </graphic>
       </Button>
+      <Label fx:id="signupButton" alignment="CENTER" layoutX="114.0" layoutY="316.0" prefHeight="31.0" prefWidth="171.0" text="signup" textFill="#140901">
+         <font>
+            <Font name="Edwardian Script ITC" size="49.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

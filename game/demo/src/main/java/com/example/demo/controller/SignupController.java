@@ -1,5 +1,9 @@
 package com.example.demo.controller;
 
+import com.example.demo.SystemGame;
+import com.example.demo.model.Map;
+import com.example.demo.model.Player;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,10 +16,24 @@ public class SignupController {
             throw new InvalidPassword();
         }
     }
-    public void checkUsername(){
-
+    public void checkUsername(String username) throws InvalidUsername {
+        boolean duplicateUsername=false;
+        for (Player player: SystemGame.players){
+            if (player.getPlayerID().equals(username)) {
+                duplicateUsername = true;
+                break;
+            }
+        }
+        if (duplicateUsername){
+            throw new InvalidUsername();
+        }
     }
-    public void addUser(){
-
+    public void checkMap(Map map) throws InvalidMap {
+        if (map==null){
+            throw new InvalidMap();
+        }
+    }
+    public void addUser(Player player){
+        SystemGame.players.add(player);
     }
 }

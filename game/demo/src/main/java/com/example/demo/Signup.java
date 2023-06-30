@@ -1,6 +1,10 @@
 package com.example.demo;
 
+import com.example.demo.controller.InvalidMap;
+import com.example.demo.controller.InvalidPassword;
+import com.example.demo.controller.InvalidUsername;
 import com.example.demo.controller.SignupController;
+import com.example.demo.model.Map;
 import com.example.demo.model.Player;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -27,6 +32,7 @@ public class Signup implements Initializable {
         mapImage.setVisible(false);
     }
     int imageIndex=0;
+    private Map selectedMap;
     @FXML
     private ImageView mapImage = new ImageView();
     @FXML
@@ -35,13 +41,10 @@ public class Signup implements Initializable {
     private TextField usernameTf;
 
     @FXML
-    private Button signupButton;
-
-    @FXML
     private Button btBack;
 
     @FXML
-    private ImageView selectedMap;
+    private ImageView selectedImage;
 
     @FXML
     private Button btNext;
@@ -52,17 +55,32 @@ public class Signup implements Initializable {
     @FXML
     private Label mapButton;
     @FXML
-    void signupButton(MouseEvent event) {
-//        SignupController signup = new SignupController();
-//        signup.checkPassword(passwordTf.getText());
-//        signup.checkPassword(usernameTf.getText());
-//        Player player = new Player();
-//        signup.addUser();
+    void signupButton(MouseEvent event) throws IOException {
+        SignupController signup = new SignupController();
+        try {
+            signup.checkPassword(passwordTf.getText());
+            signup.checkUsername(usernameTf.getText());
+            signup.checkMap(selectedMap);
+            Player player = new Player(usernameTf.getText(),passwordTf.getText(),1,0,0, selectedMap);
+            signup.addUser(player);
+            Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("profile.fxml")));
+            Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene=new Scene(parent,1550,800);
+            stage.setScene(scene);
+            stage.setTitle("profile");
+            stage.show();
+
+        } catch (InvalidPassword | InvalidUsername | InvalidMap e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.show();
+        }
     }
     @FXML
     void mapImage(MouseEvent event) {
-        selectedMap.setImage(SystemGame.maps.get(imageIndex).getImage());
-        selectedMap.setVisible(true);
+        selectedImage.setImage(SystemGame.maps.get(imageIndex).getImage());
+        selectedMap=SystemGame.maps.get(imageIndex);
+        selectedImage.setVisible(true);
         mapImage.setVisible(false);
         btNext.setVisible(false);
         btBack.setVisible(false);
@@ -91,8 +109,8 @@ public class Signup implements Initializable {
     }
     @FXML
     void mapButton(MouseEvent event) throws URISyntaxException {
+        SystemGame systemGame = new SystemGame();
         if(SystemGame.maps != null){
-            SystemGame systemGame = new SystemGame();
             mapImage.setImage(SystemGame.maps.get(imageIndex).getImage());
             mapImage.setVisible(true);
             if(SystemGame.maps.size()>imageIndex){
