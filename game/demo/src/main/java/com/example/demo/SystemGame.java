@@ -9,11 +9,9 @@ import java.util.ArrayList;
 public class SystemGame {
     public static Player player;
     public  static ArrayList<Map> maps = new ArrayList<>();
+    public  static ArrayList<Hero> heroes = new ArrayList<>();
     public  static ArrayList<Map> selectedMaps = new ArrayList<>();
     public static ArrayList<Player> players = new ArrayList<>();
-    public SystemGame() throws URISyntaxException {
-
-    }
     private void addBuildings(Map map) throws URISyntaxException {
         HelloApplication helloApplication = new HelloApplication();
         Wall wall = new Wall(helloApplication.getClass().getResource("Wall12.png").toURI().toString(), BuildingCategory.NORMAL,100,15.5);
@@ -43,6 +41,19 @@ public class SystemGame {
         maps.add(map2);
         maps.add(map3);
         maps.add(map4);
+    }
+    public void addHero() throws URISyntaxException {
+        Hero1 hero1 = new Hero1();
+        Hero2 hero2 = new Hero2();
+        Hero3 hero3 = new Hero3();
+        Hero4 hero4 = new Hero4();
+        Hero5 hero5 = new Hero5();
+
+        heroes.add(hero1);
+        heroes.add(hero2);
+        heroes.add(hero3);
+        heroes.add(hero4);
+        heroes.add(hero5);
     }
 
 }

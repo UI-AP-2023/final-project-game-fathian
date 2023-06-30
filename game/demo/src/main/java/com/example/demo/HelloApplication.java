@@ -13,6 +13,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException, URISyntaxException {
         SystemGame systemGame = new SystemGame();
         systemGame.addMaps();
+        systemGame.addHero();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("firstPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1550, 800);
         stage.setTitle("clash of clans");

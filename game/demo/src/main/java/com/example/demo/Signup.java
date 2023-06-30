@@ -110,8 +110,7 @@ public class Signup implements Initializable {
         }
     }
     @FXML
-    void mapButton(MouseEvent event) throws URISyntaxException {
-        SystemGame systemGame = new SystemGame();
+    void mapButton(MouseEvent event){
         if(SystemGame.maps != null){
             mapImage.setImage(SystemGame.maps.get(imageIndex).getImage());
             mapImage.setVisible(true);
@@ -122,8 +121,6 @@ public class Signup implements Initializable {
                 btBack.setVisible(true);
             }
         }
-
-
     }
     @FXML
     void btHome(MouseEvent event) throws IOException {
