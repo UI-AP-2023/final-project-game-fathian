@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Map4">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1550.0" pickOnBounds="true">
+         <image>
+            <Image url="@map5.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="61.0" layoutX="887.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wall4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="61.0" layoutX="795.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wall4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="61.0" layoutX="616.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wall4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="61.0" layoutX="663.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wall4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="61.0" layoutX="573.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wall4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="61.0" layoutX="778.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wall4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="61.0" layoutX="826.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wall4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="61.0" layoutX="564.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wall4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="61.0" layoutX="877.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wall4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="61.0" layoutX="616.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wall4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="61.0" layoutX="668.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wall4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="61.0" layoutX="840.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wall4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="106.0" layoutX="526.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wizard_Tower15.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="106.0" layoutX="729.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wizard_Tower15.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="106.0" layoutX="729.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wizard_Tower15.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="106.0" layoutX="927.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Wizard_Tower15.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="157.0" fitWidth="146.0" layoutX="690.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Gold_Storage16.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

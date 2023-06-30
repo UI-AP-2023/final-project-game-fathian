@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,14 +9,68 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-
 <AnchorPane prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Signup">
    <children>
       <ImageView fitHeight="800.0" fitWidth="1550.0" pickOnBounds="true">
          <image>
-            <Image url="@signup2.jpg" />
+            <Image url="@signup3.jpg" />
          </image>
       </ImageView>
+      <Label fx:id="username" alignment="CENTER" layoutX="114.0" layoutY="67.0" prefHeight="31.0" prefWidth="171.0" text="username: " textFill="#46250d">
+         <font>
+            <Font name="Edwardian Script ITC" size="49.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameTf" layoutX="301.0" layoutY="94.0" />
+      <Label fx:id="password" alignment="CENTER" layoutX="114.0" layoutY="145.0" prefHeight="31.0" prefWidth="171.0" text="password: " textFill="#46250d">
+         <font>
+            <Font name="Edwardian Script ITC" size="49.0" />
+         </font>
+      </Label>
+      <TextField fx:id="passwordTf" layoutX="301.0" layoutY="179.0" />
+      <Button fx:id="signupButton" layoutX="167.0" layoutY="682.0" mnemonicParsing="false" onMouseClicked="#signupButton" onMouseEntered="#signupButton" onMouseExited="#signupButton" text="signup" />
+      <ImageView fx:id="selectedMap" fitHeight="150.0" fitWidth="200.0" layoutX="279.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <Button fx:id="btNext" alignment="CENTER" contentDisplay="CENTER" layoutX="716.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#btNext" opacity="0.3" prefHeight="58.0" prefWidth="43.0" textAlignment="CENTER" visible="false">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="48.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@next.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fx:id="mapImage" fitHeight="272.0" fitWidth="411.0" layoutX="304.0" layoutY="391.0" onMouseClicked="#mapImage" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <Button fx:id="btHome" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#btHome" opacity="0.3" prefHeight="56.0" prefWidth="65.0" textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="48.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@png-transparent-computer-icons-home-home-angle-text-logo-thumbnail.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label fx:id="mapButton" alignment="CENTER" layoutX="114.0" layoutY="235.0" onMouseClicked="#mapButton" prefHeight="31.0" prefWidth="171.0" text="maps" textFill="#46250d">
+         <font>
+            <Font name="Edwardian Script ITC" size="49.0" />
+         </font>
+      </Label>
+      <Button fx:id="btBack" alignment="CENTER" contentDisplay="CENTER" layoutX="258.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#btBack" opacity="0.3" prefHeight="56.0" prefWidth="38.0" textAlignment="CENTER" visible="false">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
