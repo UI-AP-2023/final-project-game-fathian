@@ -35,5 +35,6 @@ public class SignupController {
     }
     public void addUser(Player player){
         SystemGame.players.add(player);
+        SystemGame.player=player;
     }
 }

@@ -11,6 +11,7 @@ public class LoginController {
                 foundUsername=true;
                 if (!player.getPassword().equals(password))
                     throw new InvalidPassword();
+                else SystemGame.player=player;
             }
         }
         if (!foundUsername){

@@ -32,7 +32,7 @@
             <Font name="Edwardian Script ITC" size="49.0" />
          </font>
       </Label>
-      <Label fx:id="attack" alignment="CENTER" layoutX="134.0" layoutY="333.0" onMouseClicked="#attack" prefHeight="31.0" prefWidth="171.0" text="attack" textFill="WHITE">
+      <Label fx:id="attack" alignment="CENTER" layoutX="134.0" layoutY="342.0" onMouseClicked="#attack" prefHeight="31.0" prefWidth="171.0" text="attack" textFill="WHITE">
          <font>
             <Font name="Edwardian Script ITC" size="49.0" />
          </font>

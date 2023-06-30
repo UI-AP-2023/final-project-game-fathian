@@ -7,6 +7,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 public class SystemGame {
+    public static Player player;
     public  static ArrayList<Map> maps = new ArrayList<>();
     public  static ArrayList<Map> selectedMaps = new ArrayList<>();
     public static ArrayList<Player> players = new ArrayList<>();

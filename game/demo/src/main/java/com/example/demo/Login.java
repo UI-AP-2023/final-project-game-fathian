@@ -3,6 +3,7 @@ package com.example.demo;
 import com.example.demo.controller.InvalidPassword;
 import com.example.demo.controller.InvalidUsername;
 import com.example.demo.controller.LoginController;
+import com.example.demo.model.Player;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
