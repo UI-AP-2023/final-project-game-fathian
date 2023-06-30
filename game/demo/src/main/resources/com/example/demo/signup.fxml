@@ -71,7 +71,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Label fx:id="signupButton" alignment="CENTER" layoutX="114.0" layoutY="316.0" prefHeight="31.0" prefWidth="171.0" text="signup" textFill="#140901">
+      <Label fx:id="signupButton" alignment="CENTER" layoutX="114.0" layoutY="316.0" onMouseClicked="#signupButton" prefHeight="31.0" prefWidth="171.0" text="signup" textFill="#140901">
          <font>
             <Font name="Edwardian Script ITC" size="49.0" />
          </font>

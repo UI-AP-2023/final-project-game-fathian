@@ -63,11 +63,13 @@ public class Signup implements Initializable {
             signup.checkMap(selectedMap);
             Player player = new Player(usernameTf.getText(),passwordTf.getText(),1,0,0, selectedMap);
             signup.addUser(player);
-            Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("profile.fxml")));
+            SystemGame.selectedMaps.add(selectedMap);
+            SystemGame.maps.remove(selectedMap);
+            Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu.fxml")));
             Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
             Scene scene=new Scene(parent,1550,800);
             stage.setScene(scene);
-            stage.setTitle("profile");
+            stage.setTitle("menu");
             stage.show();
 
         } catch (InvalidPassword | InvalidUsername | InvalidMap e) {

@@ -17,6 +17,14 @@ public class Player {
     private int losses;
     private Map map;
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getPlayerID() {
         return playerID;
     }
