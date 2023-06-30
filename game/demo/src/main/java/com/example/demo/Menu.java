@@ -13,12 +13,41 @@ import java.util.Objects;
 
 public class Menu {
     @FXML
-    void back(MouseEvent event) throws IOException {
+    void btHome(MouseEvent event) throws IOException {
         Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("firstPage.fxml")));
         Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene=new Scene(parent,1550,800);
         stage.setScene(scene);
         stage.setTitle("firstPage");
+        stage.show();
+    }
+
+    @FXML
+    void heroes(MouseEvent event) throws IOException {
+        Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("heroes.fxml")));
+        Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene=new Scene(parent,1550,800);
+        stage.setScene(scene);
+        stage.setTitle("heroes");
+        stage.show();
+    }
+    @FXML
+    void attack(MouseEvent event) throws IOException {
+        Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("attack.fxml")));
+        Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene=new Scene(parent,1550,800);
+        stage.setScene(scene);
+        stage.setTitle("attack");
+        stage.show();
+    }
+
+    @FXML
+    void profile(MouseEvent event) throws IOException {
+        Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("profile.fxml")));
+        Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene=new Scene(parent,1550,800);
+        stage.setScene(scene);
+        stage.setTitle("profile");
         stage.show();
     }
 }

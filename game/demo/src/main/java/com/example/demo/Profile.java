@@ -15,11 +15,11 @@ public class Profile {
 
     @FXML
     void back(MouseEvent event) throws IOException {
-        Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("firstPage.fxml")));
+        Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu.fxml")));
         Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene=new Scene(parent,1550,800);
         stage.setScene(scene);
-        stage.setTitle("firstPage");
+        stage.setTitle("menu");
         stage.show();
     }
 }

@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Profile">
-    <children>
-        <Button fx:id="back" layoutX="212.0" layoutY="161.0" mnemonicParsing="false" onMouseClicked="#back" text="Button" />
-    </children>
+<AnchorPane prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Menu">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1550.0" pickOnBounds="true">
+         <image>
+            <Image url="@hog-rider-clash-of-clans-supercell-games-wallpaper-preview.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btHome" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#btHome" opacity="0.3" prefHeight="56.0" prefWidth="65.0" textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="48.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@png-transparent-computer-icons-home-home-angle-text-logo-thumbnail.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label fx:id="heroes" alignment="CENTER" layoutX="134.0" layoutY="432.0" onMouseClicked="#heroes" prefHeight="31.0" prefWidth="171.0" text="heroes" textFill="#f8f7f6">
+         <font>
+            <Font name="Edwardian Script ITC" size="49.0" />
+         </font>
+      </Label>
+      <Label fx:id="attack" alignment="CENTER" layoutX="134.0" layoutY="333.0" onMouseClicked="#attack" prefHeight="31.0" prefWidth="171.0" text="attack" textFill="WHITE">
+         <font>
+            <Font name="Edwardian Script ITC" size="49.0" />
+         </font>
+      </Label>
+      <Label fx:id="profile" alignment="CENTER" layoutX="134.0" layoutY="533.0" onMouseClicked="#profile" prefHeight="31.0" prefWidth="171.0" text="profile" textFill="#e1dfde">
+         <font>
+            <Font name="Edwardian Script ITC" size="49.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
