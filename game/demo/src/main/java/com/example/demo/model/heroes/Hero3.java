@@ -1,15 +1,32 @@
-package com.example.demo.model;
+package com.example.demo.model.heroes;
 
 import com.example.demo.HelloApplication;
+import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.net.URISyntaxException;
 
-public class Hero3 extends Hero{
+public class Hero3 extends Hero {
     public Hero3() throws URISyntaxException {
         HelloApplication helloApplication = new HelloApplication();
+
+        this.number.setId("hero3number");
+        this.number.setAlignment(Pos.CENTER);
+        this.number.setPrefHeight(31.0);
+        this.number.setPrefWidth(171.0);
+        this.number.setLayoutX(449.0);
+        this.number.setLayoutY(720.0);
+        this.number.setPickOnBounds(true);
+
         this.image=new ImageView(new Image(helloApplication.getClass().getResource("Warrior_01__ATTACK_000.png").toURI().toString()));
+        this.image.setId("hero3");
+        this.image.setFitHeight(187.0);
+        this.image.setFitWidth(258.0);
+        this.image.setLayoutX(392.0);
+        this.image.setLayoutY(546.0);
+        this.image.setPickOnBounds(true);
+        this.image.setPreserveRatio(true);
         this.health=300;
     }
     public ImageView getImage() {

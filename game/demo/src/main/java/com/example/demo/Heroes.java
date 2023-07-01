@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.model.*;
+import com.example.demo.model.heroes.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

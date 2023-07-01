@@ -1,6 +1,9 @@
 package com.example.demo.model;
 
+import com.example.demo.model.buildings.Building;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 import java.util.ArrayList;
 
 public class Map {
@@ -10,8 +13,17 @@ public class Map {
     int heroLimits;
     String mapId;
 
+    ImageView backGrand = new ImageView();
 
-    public Map(String urlImage,int level,int heroLimits) {
+    public ImageView getBackGrand() {
+        return backGrand;
+    }
+
+    public void setBackGrand(ImageView backGrand) {
+        this.backGrand = backGrand;
+    }
+
+    public Map(String urlImage, int level, int heroLimits) {
         this.image = new Image(urlImage,true);
         this.level=level;
         this.heroLimits=heroLimits;
@@ -40,7 +52,6 @@ public class Map {
     public void setHeroLimits(int heroLimits) {
         this.heroLimits = heroLimits;
     }
-
     public String getMapId() {
         return mapId;
     }

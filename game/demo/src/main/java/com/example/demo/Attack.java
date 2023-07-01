@@ -1,6 +1,10 @@
 package com.example.demo;
 
 import com.example.demo.model.*;
+import com.example.demo.model.Map;
+import com.example.demo.model.buildings.Building;
+import com.example.demo.model.heroes.Hero;
+import com.example.demo.model.heroes.Hero1;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,14 +16,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Random;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class Attack implements Initializable {
     @FXML
@@ -187,13 +190,30 @@ public class Attack implements Initializable {
         }
     }
     @FXML
-    void mapImage(MouseEvent event) throws IOException {
-        SystemGame.selectedMap=SystemGame.maps.get(mapImageIndex);
-        Parent parent= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("clashOfClans.fxml")));
-        Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene=new Scene(parent,1550,800);
-        stage.setScene(scene);
-        stage.setTitle("clash Of Clans");
-        stage.show();
+    void mapImage(MouseEvent event) throws IOException, URISyntaxException {
+        SystemGame.selectedMap=opponentMaps.get(mapImageIndex);
+        if (numberOfHero1>0){
+            SystemGame.heroes.get(0).setSelectedNumber(numberOfHero1);
+            SystemGame.selectedHeroes.add(SystemGame.heroes.get(0));
+        }
+        if (numberOfHero2>0){
+            SystemGame.heroes.get(1).setSelectedNumber(numberOfHero2);
+            SystemGame.selectedHeroes.add(SystemGame.heroes.get(1));
+        }
+        if (numberOfHero3>0){
+            SystemGame.heroes.get(2).setSelectedNumber(numberOfHero3);
+            SystemGame.selectedHeroes.add(SystemGame.heroes.get(2));
+        }
+        if (numberOfHero4>0){
+            SystemGame.heroes.get(3).setSelectedNumber(numberOfHero4);
+            SystemGame.selectedHeroes.add(SystemGame.heroes.get(3));
+        }
+        if (numberOfHero5>0){
+            SystemGame.heroes.get(4).setSelectedNumber(numberOfHero5);
+            SystemGame.selectedHeroes.add(SystemGame.heroes.get(4));
+        }
+        ClashOfClans clashOfClans = new ClashOfClans();
+        clashOfClans.start((Stage) ((Node)event.getSource()).getScene().getWindow());
+
     }
 }

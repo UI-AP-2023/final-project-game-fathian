@@ -46,7 +46,7 @@
       </Button>
       <ImageView fitHeight="269.0" fitWidth="1550.0" layoutY="531.0" pickOnBounds="true">
          <image>
-            <Image url="@download (1).png" />
+            <Image url="@download1.png" />
          </image></ImageView>
       <ImageView fx:id="hero1" fitHeight="178.0" fitWidth="147.0" layoutX="36.0" layoutY="559.0" onMouseClicked="#hero1" pickOnBounds="true" preserveRatio="true">
          <image>
