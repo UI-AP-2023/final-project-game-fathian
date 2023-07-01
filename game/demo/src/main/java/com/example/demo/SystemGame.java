@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class SystemGame {
     public static Player player;
+    public  static Map selectedMap;
     public  static ArrayList<Map> maps = new ArrayList<>();
     public  static ArrayList<Hero> heroes = new ArrayList<>();
     public  static ArrayList<Map> selectedMaps = new ArrayList<>();

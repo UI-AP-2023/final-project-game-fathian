@@ -61,6 +61,7 @@ public class Signup implements Initializable {
             signup.checkPassword(passwordTf.getText());
             signup.checkUsername(usernameTf.getText());
             signup.checkMap(selectedMap);
+            selectedMap.setMapId(usernameTf.getText());
             Player player = new Player(usernameTf.getText(),passwordTf.getText(),1,0,0, selectedMap);
             signup.addUser(player);
             SystemGame.selectedMaps.add(selectedMap);

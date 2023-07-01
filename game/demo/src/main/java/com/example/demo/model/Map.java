@@ -32,4 +32,20 @@ public class Map {
     public void setImage(Image image) {
         this.image = image;
     }
+
+    public int getHeroLimits() {
+        return heroLimits;
+    }
+
+    public void setHeroLimits(int heroLimits) {
+        this.heroLimits = heroLimits;
+    }
+
+    public String getMapId() {
+        return mapId;
+    }
+
+    public void setMapId(String mapId) {
+        this.mapId = mapId;
+    }
 }
