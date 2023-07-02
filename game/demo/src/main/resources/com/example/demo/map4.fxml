@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Map4">
+<AnchorPane prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.PageController.Map4PageController">
    <children>
       <ImageView fitHeight="800.0" fitWidth="1550.0" pickOnBounds="true">
          <image>
@@ -75,7 +70,7 @@
             <Image url="@images/Wall4.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="82.0" fitWidth="106.0" layoutX="526.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="82.0" fitWidth="106.0" layoutX="512.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/Wizard_Tower15.png" />
          </image>
@@ -85,7 +80,7 @@
             <Image url="@images/Wizard_Tower15.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="82.0" fitWidth="106.0" layoutX="729.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="82.0" fitWidth="106.0" layoutX="729.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/Wizard_Tower15.png" />
          </image>

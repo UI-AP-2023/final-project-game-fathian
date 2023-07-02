@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.model.exception;
 
 public class InvalidUsername extends Exception {
     public InvalidUsername(){

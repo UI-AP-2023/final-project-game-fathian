@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.model.SystemGame;
 import com.example.demo.model.heroes.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

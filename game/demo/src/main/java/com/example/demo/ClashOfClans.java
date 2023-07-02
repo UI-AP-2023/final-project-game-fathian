@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.HelloApplication;
+import com.example.demo.model.SystemGame;
 import com.example.demo.model.buildings.Building;
 import com.example.demo.model.heroes.Hero;
 import javafx.scene.Scene;

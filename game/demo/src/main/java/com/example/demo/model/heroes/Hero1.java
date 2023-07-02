@@ -1,17 +1,11 @@
 package com.example.demo.model.heroes;
 
 import com.example.demo.HelloApplication;
-import com.example.demo.SystemGame;
+import com.example.demo.model.SystemGame;
 import com.example.demo.model.buildings.Building;
-import javafx.animation.PathTransition;
-import javafx.animation.TranslateTransition;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.LineTo;
-import javafx.scene.shape.MoveTo;
-import javafx.scene.shape.Path;
-import javafx.util.Duration;
 
 import java.net.URISyntaxException;
 
@@ -34,7 +28,7 @@ public class Hero1 extends Hero implements Runnable {
         this.image.setFitHeight(108.0);
         this.image.setFitWidth(77.0);
         this.image.setLayoutX(36.0);
-        this.image.setLayoutY(559.0);
+        this.image.setLayoutY(509.0);
         this.image.setPickOnBounds(true);
         this.image.setPreserveRatio(true);
         this.image.setOnMouseClicked(event -> {

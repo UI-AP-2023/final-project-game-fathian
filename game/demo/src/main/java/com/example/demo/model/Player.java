@@ -9,6 +9,14 @@ public class Player {
         this.losses=losses;
         this.map=map;
     }
+    public Player(String playerID,String password,int level,int wins,int losses,String mapId) {
+        this.playerID = playerID;
+        this.password=password;
+        this.level=level;
+        this.wins=wins;
+        this.losses=losses;
+        this.mapId=mapId;
+    }
 
     private String playerID;
     private String password;
@@ -16,6 +24,7 @@ public class Player {
     private int wins;
     private int losses;
     private Map map;
+    private String mapId;
 
     public String getPassword() {
         return password;

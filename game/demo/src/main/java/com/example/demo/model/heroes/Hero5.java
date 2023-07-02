@@ -1,13 +1,11 @@
 package com.example.demo.model.heroes;
 
 import com.example.demo.HelloApplication;
-import com.example.demo.SystemGame;
+import com.example.demo.model.SystemGame;
 import com.example.demo.model.buildings.Building;
-import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.Circle;
 
 import java.net.URISyntaxException;
 

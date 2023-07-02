@@ -1,6 +1,7 @@
-package com.example.demo;
+package com.example.demo.PageController;
 
-import com.example.demo.model.*;
+import com.example.demo.HelloApplication;
+import com.example.demo.model.Map;
 import com.example.demo.model.buildings.*;
 import com.example.demo.model.heroes.*;
 import javafx.scene.Node;
@@ -8,64 +9,21 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 
-public class SystemGame {
-    public static Player player;
-    public  static Map selectedMap;
-    public static Hero heroSelectedAttack;
-    public static Hero heroAttack;
-    public  static ArrayList<Map> maps = new ArrayList<>();
-    public  static ArrayList<Hero> heroes = new ArrayList<>();
+import static com.example.demo.model.SystemGame.heroSelectedAttack;
 
-    public  static ArrayList<Hero> selectedHeroes = new ArrayList<>();
-    public  static ArrayList<Map> selectedMaps = new ArrayList<>();
-    public static ArrayList<Player> players = new ArrayList<>();
-    private void addBuildings(Map map) throws URISyntaxException {
-
+public class Map1PageController {
+    public void addBuildings(Map map) throws URISyntaxException {
         addWalls(map);
         addCannons(map);
         addMortals(map);
-
-        WizardTower wizardTower = new WizardTower();
-        wizardTower.getImage().setId("wizardTower");
-        wizardTower.getImage().setFitHeight(114.0);
-        wizardTower.getImage().setFitWidth(106.0);
-        wizardTower.getImage().setLayoutX(778.0);
-        wizardTower.getImage().setLayoutY(271.0);
-        wizardTower.getImage().setPickOnBounds(true);
-        wizardTower.getImage().setPreserveRatio(true);
-        map.getBuildings().add(wizardTower);
-
-        SpellTower spellTower = new SpellTower();
-        spellTower.getImage().setId("spellTower");
-        spellTower.getImage().setFitHeight(101.0);
-        spellTower.getImage().setFitWidth(87.0);
-        spellTower.getImage().setLayoutX(889.0);
-        spellTower.getImage().setLayoutY(208.0);
-        spellTower.getImage().setPickOnBounds(true);
-        spellTower.getImage().setPreserveRatio(true);
-        map.getBuildings().add(spellTower);
-
-        GoldStorage goldStorage= new GoldStorage();
-        goldStorage.getImage().setId("goldStorage");
-        goldStorage.getImage().setFitHeight(103.0);
-        goldStorage.getImage().setFitWidth(96.0);
-        goldStorage.getImage().setLayoutX(660.0);
-        goldStorage.getImage().setLayoutY(197.0);
-        goldStorage.getImage().setPickOnBounds(true);
-        goldStorage.getImage().setPreserveRatio(true);
-        map.getBuildings().add(goldStorage);
-
+        addGoldStorage(map);
+        addSpellTower(map);
+        addWizardTower(map);
+        addBackGrand(map);
     }
-    public void addMaps() throws URISyntaxException {
+    private void addBackGrand(Map map1) throws URISyntaxException {
         HelloApplication helloApplication = new HelloApplication();
-        Map map1 = new Map(helloApplication.getClass().getResource("images/mapb1.png").toURI().toString(),5,50);
-        Map map2 = new Map(helloApplication.getClass().getResource("images/mapb2.png").toURI().toString(),6,50);
-        Map map3 = new Map(helloApplication.getClass().getResource("images/mapb3.png").toURI().toString(),7,50);
-        Map map4 = new Map(helloApplication.getClass().getResource("images/mapb4.png").toURI().toString(),8,50);
-
-
         map1.getBackGrand().setFitWidth(1550);
         map1.getBackGrand().setFitHeight(800);
         map1.getBackGrand().setImage(new Image(helloApplication.getClass().getResource("images/map1.png").toURI().toString()));
@@ -74,15 +32,15 @@ public class SystemGame {
             if (heroSelectedAttack!=null){
                 try {
                     if (heroSelectedAttack instanceof Hero1)
-                        SystemGame.heroSelectedAttack=new Hero1();
+                        heroSelectedAttack=new Hero1();
                     else if (heroSelectedAttack instanceof Hero2)
-                        SystemGame.heroSelectedAttack=new Hero2();
+                        heroSelectedAttack=new Hero2();
                     else if (heroSelectedAttack instanceof Hero3)
-                        SystemGame.heroSelectedAttack=new Hero3();
+                        heroSelectedAttack=new Hero3();
                     else if (heroSelectedAttack instanceof Hero4)
-                        SystemGame.heroSelectedAttack=new Hero4();
+                        heroSelectedAttack=new Hero4();
                     else
-                        SystemGame.heroSelectedAttack=new Hero5();
+                        heroSelectedAttack=new Hero5();
                 } catch (URISyntaxException e) {
                     throw new RuntimeException(e);
                 }
@@ -91,33 +49,11 @@ public class SystemGame {
                 heroSelectedAttack.getImage().setLayoutY(event.getY()-heroSelectedAttack.getImage().getFitHeight() /2);
                 heroSelectedAttack.getImage().setPickOnBounds(true);
                 heroSelectedAttack.getImage().setPreserveRatio(true);
-                ((AnchorPane)((Node)event.getSource()).getParent()).getChildren().add(SystemGame.heroSelectedAttack.getImage());
+                ((AnchorPane)((Node)event.getSource()).getParent()).getChildren().add(heroSelectedAttack.getImage());
             }
         });
-        addBuildings(map1);
-//        addBuildings(map2);
-//        addBuildings(map3);
-//        addBuildings(map4);
-
-        maps.add(map1);
-        maps.add(map2);
-        maps.add(map3);
-        maps.add(map4);
     }
-    public void addHero() throws URISyntaxException {
-        Hero1 hero1 = new Hero1();
-        Hero2 hero2 = new Hero2();
-        Hero3 hero3 = new Hero3();
-        Hero4 hero4 = new Hero4();
-        Hero5 hero5 = new Hero5();
-
-        heroes.add(hero1);
-        heroes.add(hero2);
-        heroes.add(hero3);
-        heroes.add(hero4);
-        heroes.add(hero5);
-    }
-    public void addWalls(Map map) throws URISyntaxException {
+    private void addWalls(Map map) throws URISyntaxException {
         WallWhite wall1 = new WallWhite();
         wall1.getImage().setId("wall1");
         wall1.getImage().setFitHeight(49.0);
@@ -269,7 +205,7 @@ public class SystemGame {
         map.getBuildings().add(wall14);
         map.getBuildings().add(wall15);
     }
-    public void addCannons(Map map) throws URISyntaxException {
+    private void addCannons(Map map) throws URISyntaxException {
         Cannon cannon1 = new Cannon();
         cannon1.getImage().setId("cannon1");
         cannon1.getImage().setFitHeight(77.0);
@@ -291,7 +227,7 @@ public class SystemGame {
         map.getBuildings().add(cannon1);
         map.getBuildings().add(cannon2);
     }
-    public void addMortals(Map map) throws URISyntaxException {
+    private void addMortals(Map map) throws URISyntaxException {
 
         Mortal mortal1 = new Mortal();
         mortal1.getImage().setId("mortal1");
@@ -314,5 +250,38 @@ public class SystemGame {
         map.getBuildings().add(mortal1);
         map.getBuildings().add(mortal2);
     }
+    private void addGoldStorage(Map map) throws URISyntaxException {
 
+        GoldStorage goldStorage= new GoldStorage();
+        goldStorage.getImage().setId("goldStorage");
+        goldStorage.getImage().setFitHeight(103.0);
+        goldStorage.getImage().setFitWidth(96.0);
+        goldStorage.getImage().setLayoutX(660.0);
+        goldStorage.getImage().setLayoutY(197.0);
+        goldStorage.getImage().setPickOnBounds(true);
+        goldStorage.getImage().setPreserveRatio(true);
+        map.getBuildings().add(goldStorage);
+    }
+    private void addSpellTower(Map map) throws URISyntaxException {
+        SpellTower spellTower = new SpellTower();
+        spellTower.getImage().setId("spellTower");
+        spellTower.getImage().setFitHeight(101.0);
+        spellTower.getImage().setFitWidth(87.0);
+        spellTower.getImage().setLayoutX(889.0);
+        spellTower.getImage().setLayoutY(208.0);
+        spellTower.getImage().setPickOnBounds(true);
+        spellTower.getImage().setPreserveRatio(true);
+        map.getBuildings().add(spellTower);
+    }
+    private void addWizardTower(Map map) throws URISyntaxException {
+        WizardTower wizardTower = new WizardTower();
+        wizardTower.getImage().setId("wizardTower");
+        wizardTower.getImage().setFitHeight(114.0);
+        wizardTower.getImage().setFitWidth(106.0);
+        wizardTower.getImage().setLayoutX(778.0);
+        wizardTower.getImage().setLayoutY(271.0);
+        wizardTower.getImage().setPickOnBounds(true);
+        wizardTower.getImage().setPreserveRatio(true);
+        map.getBuildings().add(wizardTower);
+    }
 }

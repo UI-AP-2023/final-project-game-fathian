@@ -1,7 +1,7 @@
 package com.example.demo.model.heroes;
 
 import com.example.demo.HelloApplication;
-import com.example.demo.SystemGame;
+import com.example.demo.model.SystemGame;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

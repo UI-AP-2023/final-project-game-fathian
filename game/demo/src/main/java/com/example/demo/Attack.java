@@ -1,10 +1,7 @@
 package com.example.demo;
 
-import com.example.demo.model.*;
+import com.example.demo.model.SystemGame;
 import com.example.demo.model.Map;
-import com.example.demo.model.buildings.Building;
-import com.example.demo.model.heroes.Hero;
-import com.example.demo.model.heroes.Hero1;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,7 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;

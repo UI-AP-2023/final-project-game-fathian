@@ -1,9 +1,11 @@
 package com.example.demo;
 
-import com.example.demo.controller.InvalidMap;
-import com.example.demo.controller.InvalidPassword;
-import com.example.demo.controller.InvalidUsername;
+import com.example.demo.model.SystemGame;
+import com.example.demo.model.exception.InvalidMap;
+import com.example.demo.model.exception.InvalidPassword;
+import com.example.demo.model.exception.InvalidUsername;
 import com.example.demo.controller.SignupController;
+import com.example.demo.dataBase.Players;
 import com.example.demo.model.Map;
 import com.example.demo.model.Player;
 import javafx.fxml.FXML;
@@ -21,7 +23,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -63,6 +64,7 @@ public class Signup implements Initializable {
             signup.checkMap(selectedMap);
             selectedMap.setMapId(usernameTf.getText());
             Player player = new Player(usernameTf.getText(),passwordTf.getText(),1,0,0, selectedMap);
+            Players.getInstance().saveUsers(usernameTf.getText(),passwordTf.getText(),1,0,0, selectedMap.getMapId());
             signup.addUser(player);
             SystemGame.selectedMaps.add(selectedMap);
             SystemGame.maps.remove(selectedMap);
