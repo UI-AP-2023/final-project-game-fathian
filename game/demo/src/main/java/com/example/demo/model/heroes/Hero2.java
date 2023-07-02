@@ -8,7 +8,7 @@ import javafx.scene.image.ImageView;
 
 import java.net.URISyntaxException;
 
-public class Hero2 extends Hero {
+public class Hero2 extends Hero implements Runnable {
     public Hero2() throws URISyntaxException {
         HelloApplication helloApplication = new HelloApplication();
 
@@ -20,7 +20,7 @@ public class Hero2 extends Hero {
         this.number.setLayoutY(720.0);
         this.number.setPickOnBounds(true);
 
-        this.image=new ImageView(new Image(helloApplication.getClass().getResource("2_FAIRY.png").toURI().toString()));
+        this.image=new ImageView(new Image(helloApplication.getClass().getResource("images/2_FAIRY.png").toURI().toString()));
         this.image.setId("hero2");
         this.image.setFitHeight(97.0);
         this.image.setFitWidth(77.0);

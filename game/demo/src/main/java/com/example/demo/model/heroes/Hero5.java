@@ -2,13 +2,18 @@ package com.example.demo.model.heroes;
 
 import com.example.demo.HelloApplication;
 import com.example.demo.SystemGame;
+import com.example.demo.model.buildings.Building;
+import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.shape.Circle;
 
 import java.net.URISyntaxException;
 
-public class Hero5 extends Hero {
+import static java.lang.Thread.sleep;
+
+public class Hero5 extends Hero implements Runnable {
     public Hero5() throws URISyntaxException {
         HelloApplication helloApplication = new HelloApplication();
 
@@ -20,7 +25,7 @@ public class Hero5 extends Hero {
         this.number.setLayoutY(720.0);
         this.number.setPickOnBounds(true);
 
-        this.image=new ImageView(new Image(helloApplication.getClass().getResource("Warrior_03__ATTACK_000.png").toURI().toString()));
+        this.image=new ImageView(new Image(helloApplication.getClass().getResource("images/Warrior_03__ATTACK_000.png").toURI().toString()));
         this.image.setId("hero5");
         this.image.setFitHeight(97.0);
         this.image.setFitWidth(206.0);
@@ -50,7 +55,54 @@ public class Hero5 extends Hero {
     }
 
     @Override
-    public void run() {
-
+    public void run(){
+        while (true){
+            synchronized (this){
+                Building building= findMinDistance();
+                System.out.println(building.getImage().getId());
+                try {
+                    sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+//                TranslateTransition translateTransition = new TranslateTransition();
+//                translateTransition.setNode(this.image);
+//                translateTransition.setDuration(Duration.millis(5000));
+//                translateTransition.setByX(building.getImage().getLayoutX()-this.image.getLayoutX());
+//                translateTransition.setByY(building.getImage().getLayoutY()-this.image.getLayoutY());
+//                translateTransition.play();
+//                try {
+//                    sleep(10000);
+//                } catch (InterruptedException e) {
+//                    throw new RuntimeException(e);
+//                }
+                image.setLayoutX(building.getImage().getLayoutX()-building.getImage().getFitWidth()-20);
+                image.setLayoutY(building.getImage().getLayoutY()-building.getImage().getFitHeight());
+                while (this.getHealth()>0 && building.getHealth()>0){
+                    try {
+                        sleep(10000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                    building.setHealth(building.getHealth()-10);
+                }
+                building.getImage().setVisible(false);
+                SystemGame.selectedMap.getBuildings().remove(building);
+            }
+        }
+    }
+    private Building findMinDistance(){
+        synchronized(this){
+            double minDistance=1550;
+            Building minDistanceBuilding = null;
+            for (Building building : SystemGame.selectedMap.getBuildings()){
+                if (Math.sqrt(Math.pow(building.getImage().getLayoutX()-this.image.getLayoutX(),2)+Math.pow(building.getImage().getLayoutY()-this.image.getLayoutY(),2))<minDistance){
+                    minDistance=Math.sqrt(Math.pow(building.getImage().getLayoutX()-this.image.getLayoutX(),2)+Math.pow(building.getImage().getLayoutY()-this.image.getLayoutY(),2));
+                    System.out.println(minDistance);
+                    minDistanceBuilding=building;
+                }
+            }
+            return minDistanceBuilding;
+        }
     }
 }

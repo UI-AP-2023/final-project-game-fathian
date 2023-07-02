@@ -21,7 +21,7 @@ public class ClashOfClans{
         for (Building building:SystemGame.selectedMap.getBuildings()){
             anchorPane.getChildren().add(building.getImage());
         }
-        ImageView backGrand= new ImageView(new Image(helloApplication.getClass().getResource("download1.png").toURI().toString()));
+        ImageView backGrand= new ImageView(new Image(helloApplication.getClass().getResource("images/download1.png").toURI().toString()));
         backGrand.setFitHeight(269);
         backGrand.setFitWidth(1550);
         backGrand.setLayoutY(531);

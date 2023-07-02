@@ -3,16 +3,21 @@ package com.example.demo.model.heroes;
 import com.example.demo.HelloApplication;
 import com.example.demo.SystemGame;
 import com.example.demo.model.buildings.Building;
+import javafx.animation.PathTransition;
+import javafx.animation.TranslateTransition;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Paint;
+import javafx.scene.shape.LineTo;
+import javafx.scene.shape.MoveTo;
+import javafx.scene.shape.Path;
+import javafx.util.Duration;
 
 import java.net.URISyntaxException;
 
-public class Hero1 extends Hero {
+import static java.lang.Thread.sleep;
+
+public class Hero1 extends Hero implements Runnable {
     public Hero1() throws URISyntaxException {
         HelloApplication helloApplication = new HelloApplication();
 
@@ -24,7 +29,7 @@ public class Hero1 extends Hero {
         this.number.setLayoutY(720.0);
         this.number.setPickOnBounds(true);
 
-        this.image=new ImageView(new Image(helloApplication.getClass().getResource("1_FAIRY.png").toURI().toString()));
+        this.image=new ImageView(new Image(helloApplication.getClass().getResource("images/1_FAIRY.png").toURI().toString()));
         this.image.setId("hero1");
         this.image.setFitHeight(108.0);
         this.image.setFitWidth(77.0);
@@ -56,18 +61,52 @@ public class Hero1 extends Hero {
     @Override
     public void run(){
         while (true){
-            Building building=minDistance();
-        }
-    }
-    private Building minDistance(){
-        double minDistance=1550;
-        Building minDistanceBuilding = null;
-        for (Building building : SystemGame.selectedMap.getBuildings()){
-            if (Math.sqrt(Math.pow(building.getImage().getX()-this.image.getX(),2)+Math.pow(building.getImage().getY()-this.image.getY(),2))<minDistance){
-                minDistance=Math.sqrt(Math.pow(building.getImage().getX()-this.image.getX(),2)+Math.pow(building.getImage().getY()-this.image.getY(),2));
-                minDistanceBuilding=building;
+            synchronized (this){
+                Building building= findMinDistance();
+                System.out.println(building.getImage().getId());
+                try {
+                    sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+//                TranslateTransition translateTransition = new TranslateTransition();
+//                translateTransition.setNode(this.image);
+//                translateTransition.setDuration(Duration.millis(5000));
+//                translateTransition.setByX(building.getImage().getLayoutX()-this.image.getLayoutX());
+//                translateTransition.setByY(building.getImage().getLayoutY()-this.image.getLayoutY());
+//                translateTransition.play();
+//                try {
+//                    sleep(10000);
+//                } catch (InterruptedException e) {
+//                    throw new RuntimeException(e);
+//                }
+                image.setLayoutX(building.getImage().getLayoutX()-building.getImage().getFitWidth());
+                image.setLayoutY(building.getImage().getLayoutY()-building.getImage().getFitHeight());
+                while (this.getHealth()>0 && building.getHealth()>0){
+                    try {
+                        sleep(10000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                    building.setHealth(building.getHealth()-10);
+                }
+                building.getImage().setVisible(false);
+                SystemGame.selectedMap.getBuildings().remove(building);
             }
         }
-        return minDistanceBuilding;
+    }
+    private Building findMinDistance(){
+        synchronized(this){
+            double minDistance=1550;
+            Building minDistanceBuilding = null;
+            for (Building building : SystemGame.selectedMap.getBuildings()){
+                if (Math.sqrt(Math.pow(building.getImage().getLayoutX()-this.image.getLayoutX(),2)+Math.pow(building.getImage().getLayoutY()-this.image.getLayoutY(),2))<minDistance){
+                    minDistance=Math.sqrt(Math.pow(building.getImage().getLayoutX()-this.image.getLayoutX(),2)+Math.pow(building.getImage().getLayoutY()-this.image.getLayoutY(),2));
+                    System.out.println(minDistance);
+                    minDistanceBuilding=building;
+                }
+            }
+            return minDistanceBuilding;
+        }
     }
 }

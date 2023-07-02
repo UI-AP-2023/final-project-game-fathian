@@ -12,12 +12,12 @@
    <children>
       <ImageView fitHeight="800.0" fitWidth="1550.0" pickOnBounds="true">
          <image>
-            <Image url="@pastel-green-color-solid-background-1920x1080.png" />
+            <Image url="@images/pastel-green-color-solid-background-1920x1080.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mapImage" fitHeight="380.0" fitWidth="564.0" layoutX="484.0" layoutY="58.0" onMouseClicked="#mapImage" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@download.png" />
+            <Image url="@images/download.png" />
          </image>
       </ImageView>
       <Button fx:id="btHome" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#btHome" opacity="0.3" prefHeight="56.0" prefWidth="65.0" textAlignment="CENTER">
@@ -27,7 +27,7 @@
          <graphic>
             <ImageView fitHeight="48.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@png-transparent-computer-icons-home-home-angle-text-logo-thumbnail.png" />
+                  <Image url="@images/png-transparent-computer-icons-home-home-angle-text-logo-thumbnail.png" />
                </image>
             </ImageView>
          </graphic>
@@ -39,38 +39,38 @@
          <graphic>
             <ImageView fitHeight="47.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@next.png" />
+                  <Image url="@images/next.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
       <ImageView fitHeight="269.0" fitWidth="1550.0" layoutY="531.0" pickOnBounds="true">
          <image>
-            <Image url="@download1.png" />
+            <Image url="@images/download1.png" />
          </image></ImageView>
       <ImageView fx:id="hero1" fitHeight="178.0" fitWidth="147.0" layoutX="36.0" layoutY="559.0" onMouseClicked="#hero1" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@1_FAIRY.png" />
+            <Image url="@images/1_FAIRY.png" />
          </image>
       </ImageView>
       <ImageView fx:id="hero5" fitHeight="196.0" fitWidth="276.0" layoutX="858.0" layoutY="537.0" onMouseClicked="#hero5" pickOnBounds="true">
          <image>
-            <Image url="@Warrior_03__ATTACK_000.png" />
+            <Image url="@images/Warrior_03__ATTACK_000.png" />
          </image>
       </ImageView>
       <ImageView fx:id="hero4" fitHeight="196.0" fitWidth="331.0" layoutX="600.0" layoutY="537.0" onMouseClicked="#hero4" pickOnBounds="true">
          <image>
-            <Image url="@Warrior_02__ATTACK_000.png" />
+            <Image url="@images/Warrior_02__ATTACK_000.png" />
          </image>
       </ImageView>
       <ImageView fx:id="hero3" fitHeight="187.0" fitWidth="285.0" layoutX="392.0" layoutY="546.0" onMouseClicked="#hero3" pickOnBounds="true">
          <image>
-            <Image url="@Warrior_01__ATTACK_000.png" />
+            <Image url="@images/Warrior_01__ATTACK_000.png" />
          </image>
       </ImageView>
       <ImageView fx:id="hero2" fitHeight="167.0" fitWidth="147.0" layoutX="237.0" layoutY="559.0" onMouseClicked="#hero2" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@2_FAIRY.png" />
+            <Image url="@images/2_FAIRY.png" />
          </image>
       </ImageView>
       <Label fx:id="selectedHeroN" alignment="CENTER" layoutY="464.0" prefHeight="31.0" prefWidth="171.0" text="username: " textFill="#46250d">

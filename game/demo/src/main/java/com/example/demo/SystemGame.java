@@ -60,15 +60,15 @@ public class SystemGame {
     }
     public void addMaps() throws URISyntaxException {
         HelloApplication helloApplication = new HelloApplication();
-        Map map1 = new Map(helloApplication.getClass().getResource("mapb1.png").toURI().toString(),5,50);
-        Map map2 = new Map(helloApplication.getClass().getResource("mapb2.png").toURI().toString(),6,50);
-        Map map3 = new Map(helloApplication.getClass().getResource("mapb3.png").toURI().toString(),7,50);
-        Map map4 = new Map(helloApplication.getClass().getResource("mapb4.png").toURI().toString(),8,50);
+        Map map1 = new Map(helloApplication.getClass().getResource("images/mapb1.png").toURI().toString(),5,50);
+        Map map2 = new Map(helloApplication.getClass().getResource("images/mapb2.png").toURI().toString(),6,50);
+        Map map3 = new Map(helloApplication.getClass().getResource("images/mapb3.png").toURI().toString(),7,50);
+        Map map4 = new Map(helloApplication.getClass().getResource("images/mapb4.png").toURI().toString(),8,50);
 
 
         map1.getBackGrand().setFitWidth(1550);
         map1.getBackGrand().setFitHeight(800);
-        map1.getBackGrand().setImage(new Image(helloApplication.getClass().getResource("map1.png").toURI().toString()));
+        map1.getBackGrand().setImage(new Image(helloApplication.getClass().getResource("images/map1.png").toURI().toString()));
         map1.getBackGrand().setPickOnBounds(true);
         map1.getBackGrand().setOnMouseClicked(event -> {
             if (heroSelectedAttack!=null){
@@ -86,6 +86,7 @@ public class SystemGame {
                 } catch (URISyntaxException e) {
                     throw new RuntimeException(e);
                 }
+                new Thread((Runnable) heroSelectedAttack).start();
                 heroSelectedAttack.getImage().setLayoutX(event.getX()-heroSelectedAttack.getImage().getFitWidth()/2);
                 heroSelectedAttack.getImage().setLayoutY(event.getY()-heroSelectedAttack.getImage().getFitHeight() /2);
                 heroSelectedAttack.getImage().setPickOnBounds(true);

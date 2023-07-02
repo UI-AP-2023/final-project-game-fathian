@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="800.0" fitWidth="1550.0" pickOnBounds="true">
          <image>
-            <Image url="@signup3.jpg" />
+            <Image url="@images/signup3.jpg" />
          </image>
       </ImageView>
       <Label fx:id="username" alignment="CENTER" layoutX="114.0" layoutY="67.0" prefHeight="31.0" prefWidth="171.0" text="username: " textFill="#46250d">
@@ -36,7 +36,7 @@
          <graphic>
             <ImageView fitHeight="48.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@next.png" />
+                  <Image url="@images/next.png" />
                </image>
             </ImageView>
          </graphic>
@@ -49,7 +49,7 @@
          <graphic>
             <ImageView fitHeight="48.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@png-transparent-computer-icons-home-home-angle-text-logo-thumbnail.png" />
+                  <Image url="@images/png-transparent-computer-icons-home-home-angle-text-logo-thumbnail.png" />
                </image>
             </ImageView>
          </graphic>
@@ -66,7 +66,7 @@
          <graphic>
             <ImageView fitHeight="39.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@back.png" />
+                  <Image url="@images/back.png" />
                </image>
             </ImageView>
          </graphic>

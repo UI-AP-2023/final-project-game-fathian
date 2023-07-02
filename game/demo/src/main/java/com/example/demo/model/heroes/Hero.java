@@ -3,7 +3,7 @@ package com.example.demo.model.heroes;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
-public abstract class Hero implements Runnable{
+public abstract class Hero{
     ImageView image;
     double health;
     int selectedNumber=0;

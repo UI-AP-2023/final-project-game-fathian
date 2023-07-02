@@ -11,7 +11,7 @@ import java.net.URISyntaxException;
 public class Mortal extends Building {
     public Mortal() throws URISyntaxException {
         HelloApplication helloApplication = new HelloApplication();
-        this.image=new ImageView(new Image(helloApplication.getClass().getResource("Mortar15.png").toURI().toString()));
+        this.image=new ImageView(new Image(helloApplication.getClass().getResource("images/Mortar15.png").toURI().toString()));
         this.buildingCategory= BuildingCategory.DEFENSE;
         this.health=2000;
         this.attackPower=10;
