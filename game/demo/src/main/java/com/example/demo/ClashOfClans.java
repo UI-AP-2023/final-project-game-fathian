@@ -2,8 +2,6 @@ package com.example.demo;
 
 import com.example.demo.model.buildings.Building;
 import com.example.demo.model.heroes.Hero;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -11,9 +9,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;;
 
 import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.Map;
-import java.util.ResourceBundle;
 
 public class ClashOfClans{
     public void start(Stage stage) throws URISyntaxException {
@@ -32,18 +27,18 @@ public class ClashOfClans{
         backGrand.setLayoutY(531);
         backGrand.setPickOnBounds(true);
         anchorPane.getChildren().add(backGrand);
+//        DraggableMaker draggableMaker = new DraggableMaker();
         for (Hero hero:SystemGame.selectedHeroes){
             hero.getNumber().setText(String.valueOf(hero.getSelectedNumber()));
             anchorPane.getChildren().add(hero.getNumber());
             anchorPane.getChildren().add(hero.getImage());
+//            draggableMaker.makeDraggable(hero);
         }
         Scene scene=new Scene(anchorPane,1550,800);
 //        Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.setTitle("clash Of Clans");
         stage.show();
-    }
-    public void dragAndDrop(){
 
 
     }

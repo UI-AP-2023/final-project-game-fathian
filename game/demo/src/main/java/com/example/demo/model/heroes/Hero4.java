@@ -1,6 +1,7 @@
 package com.example.demo.model.heroes;
 
 import com.example.demo.HelloApplication;
+import com.example.demo.SystemGame;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -21,12 +22,15 @@ public class Hero4 extends Hero {
 
         this.image=new ImageView(new Image(helloApplication.getClass().getResource("Warrior_02__ATTACK_000.png").toURI().toString()));
         this.image.setId("hero4");
-        this.image.setFitHeight(196.0);
-        this.image.setFitWidth(331.0);
+        this.image.setFitHeight(126.0);
+        this.image.setFitWidth(261.0);
         this.image.setLayoutX(600.0);
         this.image.setLayoutY(537.0);
         this.image.setPickOnBounds(true);
         this.image.setPreserveRatio(true);
+        this.image.setOnMouseClicked(event -> {
+            SystemGame.heroSelectedAttack=this;
+        });
         this.health=50;
     }
     public ImageView getImage() {
@@ -43,5 +47,10 @@ public class Hero4 extends Hero {
 
     public void setHealth(double health) {
         this.health = health;
+    }
+
+    @Override
+    public void run() {
+
     }
 }

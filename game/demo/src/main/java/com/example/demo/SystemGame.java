@@ -3,7 +3,9 @@ package com.example.demo;
 import com.example.demo.model.*;
 import com.example.demo.model.buildings.*;
 import com.example.demo.model.heroes.*;
+import javafx.scene.Node;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -11,6 +13,8 @@ import java.util.ArrayList;
 public class SystemGame {
     public static Player player;
     public  static Map selectedMap;
+    public static Hero heroSelectedAttack;
+    public static Hero heroAttack;
     public  static ArrayList<Map> maps = new ArrayList<>();
     public  static ArrayList<Hero> heroes = new ArrayList<>();
 
@@ -65,6 +69,30 @@ public class SystemGame {
         map1.getBackGrand().setFitWidth(1550);
         map1.getBackGrand().setFitHeight(800);
         map1.getBackGrand().setImage(new Image(helloApplication.getClass().getResource("map1.png").toURI().toString()));
+        map1.getBackGrand().setPickOnBounds(true);
+        map1.getBackGrand().setOnMouseClicked(event -> {
+            if (heroSelectedAttack!=null){
+                try {
+                    if (heroSelectedAttack instanceof Hero1)
+                        SystemGame.heroSelectedAttack=new Hero1();
+                    else if (heroSelectedAttack instanceof Hero2)
+                        SystemGame.heroSelectedAttack=new Hero2();
+                    else if (heroSelectedAttack instanceof Hero3)
+                        SystemGame.heroSelectedAttack=new Hero3();
+                    else if (heroSelectedAttack instanceof Hero4)
+                        SystemGame.heroSelectedAttack=new Hero4();
+                    else
+                        SystemGame.heroSelectedAttack=new Hero5();
+                } catch (URISyntaxException e) {
+                    throw new RuntimeException(e);
+                }
+                heroSelectedAttack.getImage().setLayoutX(event.getX()-heroSelectedAttack.getImage().getFitWidth()/2);
+                heroSelectedAttack.getImage().setLayoutY(event.getY()-heroSelectedAttack.getImage().getFitHeight() /2);
+                heroSelectedAttack.getImage().setPickOnBounds(true);
+                heroSelectedAttack.getImage().setPreserveRatio(true);
+                ((AnchorPane)((Node)event.getSource()).getParent()).getChildren().add(SystemGame.heroSelectedAttack.getImage());
+            }
+        });
         addBuildings(map1);
 //        addBuildings(map2);
 //        addBuildings(map3);
