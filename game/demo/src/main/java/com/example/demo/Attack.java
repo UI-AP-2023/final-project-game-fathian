@@ -80,7 +80,7 @@ public class Attack implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if(SystemGame.selectedMaps!= null){
             for (Map map:SystemGame.selectedMaps){
-                if (!map.getMapId().equals(SystemGame.player.getMapId()))
+                if (!map.getMapId().equals(SystemGame.player.getPlayerID()))
                     opponentMaps.add(map);
             }
             btNext.setVisible(true);

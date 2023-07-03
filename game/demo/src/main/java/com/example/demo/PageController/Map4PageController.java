@@ -9,6 +9,7 @@ import com.example.demo.model.heroes.*;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URISyntaxException;
@@ -16,6 +17,7 @@ import java.net.URISyntaxException;
 import static com.example.demo.model.SystemGame.heroSelectedAttack;
 
 public class Map4PageController {
+    private Hero hero;
     private int numberAddedHero1=0;
     private int numberAddedHero2=0;
     private int numberAddedHero3=0;
@@ -214,7 +216,7 @@ public class Map4PageController {
                     if (heroSelectedAttack instanceof Hero1){
                         if (numberAddedHero1 < heroSelectedAttack.getSelectedNumber()){
                             numberAddedHero1++;
-                            heroSelectedAttack=new Hero1();
+                            hero=new Hero1();
                         }
                         else {
                             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -225,7 +227,7 @@ public class Map4PageController {
                     else if (heroSelectedAttack instanceof Hero2){
                         if (numberAddedHero2 < heroSelectedAttack.getSelectedNumber()){
                             numberAddedHero2++;
-                            heroSelectedAttack=new Hero2();
+                            hero=new Hero2();
                         }
                         else {
                             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -236,7 +238,7 @@ public class Map4PageController {
                     else if (heroSelectedAttack instanceof Hero3){
                         if (numberAddedHero3 < heroSelectedAttack.getSelectedNumber()){
                             numberAddedHero3++;
-                            heroSelectedAttack=new Hero3();
+                            hero=new Hero3();
                         }
                         else {
                             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -248,7 +250,7 @@ public class Map4PageController {
                     {
                         if (numberAddedHero4 < heroSelectedAttack.getSelectedNumber()){
                             numberAddedHero4++;
-                            heroSelectedAttack=new Hero4();
+                            hero=new Hero4();
                         }
                         else {
                             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -259,7 +261,23 @@ public class Map4PageController {
                     else{
                         if (numberAddedHero5 < heroSelectedAttack.getSelectedNumber()){
                             numberAddedHero5++;
-                            heroSelectedAttack=new Hero5();
+                            hero=new Hero5();
+                            ((Hero5)hero).setCircle(new ImageView(new Image(helloApplication.getClass().getResource("images/fireBall.png").toURI().toString())));
+                            ((Hero5)hero).getCircle().setFitWidth(10);
+                            ((Hero5)hero).getCircle().setFitHeight(10);
+                            hero.getImage().setLayoutX(event.getX()-hero.getImage().getFitWidth()/2);
+                            hero.getImage().setLayoutY(event.getY()-hero.getImage().getFitHeight() /2);
+                            hero.getImage().setPickOnBounds(true);
+                            hero.getImage().setPreserveRatio(true);
+                            ((Hero5)hero).getCircle().setLayoutX(hero.getImage().getLayoutX());
+                            ((Hero5)hero).getCircle().setLayoutY(hero.getImage().getLayoutY());
+                            ((Hero5)hero).getCircle().setVisible(false);
+                            ((AnchorPane)((Node)event.getSource()).getParent()).getChildren().add(((Hero5)hero).getCircle());
+                            ((Hero5)hero).setCircle2(new ImageView(new Image(helloApplication.getClass().getResource("images/fireBall.png").toURI().toString())));
+                            ((Hero5)hero).getCircle2().setFitWidth(10);
+                            ((Hero5)hero).getCircle2().setFitHeight(10);
+                            ((Hero5)hero).getCircle2().setVisible(false);
+                            ((AnchorPane)((Node)event.getSource()).getParent()).getChildren().add(((Hero5)hero).getCircle2());
                         }
                         else {
                             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -270,12 +288,12 @@ public class Map4PageController {
                 } catch (URISyntaxException e) {
                     throw new RuntimeException(e);
                 }
-                new Thread((Runnable) heroSelectedAttack).start();
-                heroSelectedAttack.getImage().setLayoutX(event.getX()-heroSelectedAttack.getImage().getFitWidth()/2);
-                heroSelectedAttack.getImage().setLayoutY(event.getY()-heroSelectedAttack.getImage().getFitHeight() /2);
-                heroSelectedAttack.getImage().setPickOnBounds(true);
-                heroSelectedAttack.getImage().setPreserveRatio(true);
-                ((AnchorPane)((Node)event.getSource()).getParent()).getChildren().add(heroSelectedAttack.getImage());
+                new Thread((Runnable) hero).start();
+                hero.getImage().setLayoutX(event.getX()-hero.getImage().getFitWidth()/2);
+                hero.getImage().setLayoutY(event.getY()-hero.getImage().getFitHeight() /2);
+                hero.getImage().setPickOnBounds(true);
+                hero.getImage().setPreserveRatio(true);
+                ((AnchorPane)((Node)event.getSource()).getParent()).getChildren().add(hero.getImage());
             }
         });
     }

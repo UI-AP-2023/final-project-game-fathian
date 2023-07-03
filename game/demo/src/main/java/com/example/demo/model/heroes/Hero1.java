@@ -94,7 +94,6 @@ public class Hero1 extends Hero implements Runnable {
             for (Building building : SystemGame.selectedMap.getBuildings()){
                 if (Math.sqrt(Math.pow(building.getImage().getLayoutX()-this.getImage().getLayoutX(),2)+Math.pow(building.getImage().getLayoutY()-this.getImage().getLayoutY(),2))<minDistance){
                     minDistance=Math.sqrt(Math.pow(building.getImage().getLayoutX()-this.getImage().getLayoutX(),2)+Math.pow(building.getImage().getLayoutY()-this.getImage().getLayoutY(),2));
-                    System.out.println(minDistance);
                     minDistanceBuilding=building;
                 }
             }

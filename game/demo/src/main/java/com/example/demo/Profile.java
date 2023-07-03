@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.model.Map;
+import com.example.demo.model.Player;
 import com.example.demo.model.SystemGame;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,7 +28,12 @@ public class Profile implements Initializable {
         this.level.setText(String.valueOf(SystemGame.player.getLevel()));
         this.wins.setText(String.valueOf(SystemGame.player.getWins()));
         this.losses.setText(String.valueOf(SystemGame.player.getLosses()));
-        this.map.setImage(SystemGame.player.getMap().getImage());
+        for (Map map1 :SystemGame.selectedMaps){
+            if (map1.getMapId().equals(SystemGame.player.getPlayerID())){
+                this.map.setImage(SystemGame.player.getMap().getImage());
+                break;
+            }
+        }
     }
     @FXML
     private Label wins;

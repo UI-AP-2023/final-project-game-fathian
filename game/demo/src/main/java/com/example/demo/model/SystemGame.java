@@ -38,7 +38,7 @@ public class SystemGame {
         map14.addBuildings(map4);
 
         map1.setMapId("fathian");
-        map2.setMapId("fatemeZara");
+        map2.setMapId("fatemeZahra");
         maps.add(map1);
         maps.add(map2);
         maps.add(map3);

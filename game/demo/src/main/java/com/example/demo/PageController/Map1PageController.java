@@ -7,7 +7,10 @@ import com.example.demo.model.heroes.*;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 
 import java.net.URISyntaxException;
 
@@ -87,6 +90,20 @@ public class Map1PageController {
                         if (numberAddedHero5 < heroSelectedAttack.getSelectedNumber()){
                             numberAddedHero5++;
                             hero=new Hero5();
+                            ((Hero5)hero).setCircle(new ImageView(new Image(helloApplication.getClass().getResource("images/fireBall.png").toURI().toString())));
+                            ((Hero5)hero).getCircle().setFitWidth(10);
+                            ((Hero5)hero).getCircle().setFitHeight(10);
+                            ((Hero5)hero).getCircle().setVisible(false);
+                            ((Hero5)hero).setCircle2(new ImageView(new Image(helloApplication.getClass().getResource("images/fireBall.png").toURI().toString())));
+                            ((Hero5)hero).getCircle2().setFitWidth(10);
+                            ((Hero5)hero).getCircle2().setFitHeight(10);
+                            ((Hero5)hero).getCircle2().setVisible(false);
+                            ((AnchorPane)((Node)event.getSource()).getParent()).getChildren().add(((Hero5)hero).getCircle());
+                            ((AnchorPane)((Node)event.getSource()).getParent()).getChildren().add(((Hero5)hero).getCircle2());
+                            hero.getImage().setLayoutX(event.getX()-hero.getImage().getFitWidth()/2);
+                            hero.getImage().setLayoutY(event.getY()-hero.getImage().getFitHeight() /2);
+                            hero.getImage().setPickOnBounds(true);
+                            hero.getImage().setPreserveRatio(true);
                         }
                         else {
                             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -98,10 +115,6 @@ public class Map1PageController {
                     throw new RuntimeException(e);
                 }
                 new Thread((Runnable) hero).start();
-                hero.getImage().setLayoutX(event.getX()-heroSelectedAttack.getImage().getFitWidth()/2);
-                hero.getImage().setLayoutY(event.getY()-heroSelectedAttack.getImage().getFitHeight() /2);
-                hero.getImage().setPickOnBounds(true);
-                hero.getImage().setPreserveRatio(true);
                 ((AnchorPane)((Node)event.getSource()).getParent()).getChildren().add(hero.getImage());
             }
         });

@@ -57,8 +57,7 @@ public class Hero3 extends Hero implements Runnable {
                     translateTransition.setByX(building.getImage().getBoundsInParent().getMaxX()- layoutX.get());
                 }else if(building.getImage().getBoundsInParent().getMinX()>this.getImage().getBoundsInParent().getMaxX()){
                     translateTransition.setByX(building.getImage().getBoundsInParent().getMinX()- this.getImage().getBoundsInParent().getMaxX());
-                }
-                if(building.getImage().getBoundsInParent().getMaxY()<layoutY.get()){
+                }if(building.getImage().getBoundsInParent().getMaxY()<layoutY.get()){
                     translateTransition.setByY(building.getImage().getBoundsInParent().getMaxY()- layoutY.get());
                 }else if(building.getImage().getBoundsInParent().getMinY()>this.getImage().getBoundsInParent().getMaxY()){
                     translateTransition.setByY(building.getImage().getBoundsInParent().getMinY()- this.getImage().getBoundsInParent().getMaxY());
@@ -95,7 +94,6 @@ public class Hero3 extends Hero implements Runnable {
             for (Building building : SystemGame.selectedMap.getBuildings()){
                 if (Math.sqrt(Math.pow(building.getImage().getLayoutX()-this.getImage().getLayoutX(),2)+Math.pow(building.getImage().getLayoutY()-this.getImage().getLayoutY(),2))<minDistance){
                     minDistance=Math.sqrt(Math.pow(building.getImage().getLayoutX()-this.getImage().getLayoutX(),2)+Math.pow(building.getImage().getLayoutY()-this.getImage().getLayoutY(),2));
-                    System.out.println(minDistance);
                     minDistanceBuilding=building;
                 }
             }

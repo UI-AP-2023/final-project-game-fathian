@@ -29,15 +29,13 @@ public class ClashOfClans{
         backGrand.setLayoutY(650);
         backGrand.setPickOnBounds(true);
         anchorPane.getChildren().add(backGrand);
-//        DraggableMaker draggableMaker = new DraggableMaker();
+
         for (Hero hero:SystemGame.selectedHeroes){
             hero.getNumber().setText(String.valueOf(hero.getSelectedNumber()));
             anchorPane.getChildren().add(hero.getNumber());
             anchorPane.getChildren().add(hero.getImage());
-//            draggableMaker.makeDraggable(hero);
         }
         Scene scene=new Scene(anchorPane,1550,800);
-//        Stage stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.setTitle("clash Of Clans");
         stage.show();
