@@ -11,8 +11,8 @@ import java.net.URISyntaxException;
 public class SpellTower extends Building {
     public SpellTower() throws URISyntaxException {
         HelloApplication helloApplication= new HelloApplication();
-        this.image=new ImageView(new Image(helloApplication.getClass().getResource("images/Spell_Tower3_Rage.png").toURI().toString()));
-        this.buildingCategory= BuildingCategory.NORMAL;
-        this.health=500;
+        this.setImage(new ImageView(new Image(helloApplication.getClass().getResource("images/Spell_Tower3_Rage.png").toURI().toString())));
+        this.setBuildingCategory(BuildingCategory.NORMAL);
+        this.setHealth(500);
     }
 }

@@ -8,12 +8,17 @@ import java.util.ArrayList;
 
 public class Map {
     private Image image;
-    ArrayList<Building> buildings = new ArrayList<>();
-    int level;
-    int heroLimits;
-    String mapId;
-
-    ImageView backGrand = new ImageView();
+    private ArrayList<Building> buildings = new ArrayList<>();
+    private int level;
+    private int heroLimits;
+    private String mapId;
+    public Map(String urlImage, int level, int heroLimits) {
+        this.image = new Image(urlImage,true);
+        this.level=level;
+        this.heroLimits=heroLimits;
+        mapId="";
+    }
+    private ImageView backGrand = new ImageView();
 
     public ImageView getBackGrand() {
         return backGrand;
@@ -22,13 +27,6 @@ public class Map {
     public void setBackGrand(ImageView backGrand) {
         this.backGrand = backGrand;
     }
-
-    public Map(String urlImage, int level, int heroLimits) {
-        this.image = new Image(urlImage,true);
-        this.level=level;
-        this.heroLimits=heroLimits;
-    }
-
     public ArrayList<Building> getBuildings() {
         return buildings;
     }
@@ -58,5 +56,13 @@ public class Map {
 
     public void setMapId(String mapId) {
         this.mapId = mapId;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 }

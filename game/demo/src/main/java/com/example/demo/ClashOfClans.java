@@ -26,7 +26,7 @@ public class ClashOfClans{
         ImageView backGrand= new ImageView(new Image(helloApplication.getClass().getResource("images/download1.png").toURI().toString()));
         backGrand.setFitHeight(269);
         backGrand.setFitWidth(1550);
-        backGrand.setLayoutY(531);
+        backGrand.setLayoutY(650);
         backGrand.setPickOnBounds(true);
         anchorPane.getChildren().add(backGrand);
 //        DraggableMaker draggableMaker = new DraggableMaker();

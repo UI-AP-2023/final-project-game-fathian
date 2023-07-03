@@ -13,8 +13,10 @@ import java.util.ArrayList;
 public class SystemGame {
     public static Player player;
     public  static Map selectedMap;
+
     public static Hero heroSelectedAttack;
     public  static ArrayList<Map> maps = new ArrayList<>();
+
     public  static ArrayList<Hero> heroes = new ArrayList<>();
 
     public  static ArrayList<Hero> selectedHeroes = new ArrayList<>();
@@ -37,8 +39,8 @@ public class SystemGame {
 
         map1.setMapId("fathian");
         map2.setMapId("fatemeZara");
-        selectedMaps.add(map1);
-        selectedMaps.add(map2);
+        maps.add(map1);
+        maps.add(map2);
         maps.add(map3);
         maps.add(map4);
     }

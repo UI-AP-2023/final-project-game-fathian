@@ -11,9 +11,9 @@ import java.net.URISyntaxException;
 public class WallWhite extends Building {
     public WallWhite() throws URISyntaxException {
         HelloApplication helloApplication = new HelloApplication();
-        this.image=new ImageView(new Image(helloApplication.getClass().getResource("images/Wall12.png").toURI().toString()));
-        this.buildingCategory= BuildingCategory.NORMAL;
-        this.health=20;
+        this.setImage(new ImageView(new Image(helloApplication.getClass().getResource("images/Wall12.png").toURI().toString())));
+        this.setBuildingCategory(BuildingCategory.NORMAL);
+        this.setHealth(30);
     }
 
 }

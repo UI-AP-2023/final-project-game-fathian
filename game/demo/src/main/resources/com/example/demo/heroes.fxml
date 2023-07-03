@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Heroes">
+<AnchorPane prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Heroes">
    <children>
       <ImageView fitHeight="800.0" fitWidth="1550.0" layoutY="-45.0" pickOnBounds="true">
          <image>
@@ -61,7 +62,7 @@
          <effect>
             <DropShadow height="23.39" offsetX="10.0" offsetY="10.0" radius="10.0275" width="18.72">
                <color>
-                  <Color red="0.5473684072494507" green="0.4885770082473755" blue="0.4885770082473755" />
+                  <Color blue="0.4885770082473755" green="0.4885770082473755" red="0.5473684072494507" />
                </color>
             </DropShadow>
          </effect>
@@ -75,7 +76,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Label fx:id="healthLabel" alignment="CENTER" layoutX="918.0" layoutY="117.0" prefHeight="31.0" prefWidth="171.0" text="health:" textFill="#ff6d6d" visible="false">
+      <Label fx:id="text" alignment="TOP_CENTER" layoutX="894.0" layoutY="69.0" prefHeight="634.0" prefWidth="530.0" text="health:" textFill="#ff6d6d" visible="false">
          <font>
             <Font name="Edwardian Script ITC" size="49.0" />
          </font>

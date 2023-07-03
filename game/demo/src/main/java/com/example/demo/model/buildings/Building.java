@@ -3,9 +3,9 @@ package com.example.demo.model.buildings;
 import javafx.scene.image.ImageView;
 
 public abstract class Building {
-    ImageView image;
-    BuildingCategory buildingCategory ;
-    double health;
+    private ImageView image;
+    private BuildingCategory buildingCategory ;
+    private double health;
 
     public ImageView getImage() {
         return image;

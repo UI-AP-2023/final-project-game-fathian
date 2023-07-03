@@ -79,9 +79,8 @@ public class Attack implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if(SystemGame.selectedMaps!= null){
-
             for (Map map:SystemGame.selectedMaps){
-                if (!map.getMapId().equals(SystemGame.player.getPlayerID()))
+                if (!map.getMapId().equals(SystemGame.player.getMapId()))
                     opponentMaps.add(map);
             }
             btNext.setVisible(true);
@@ -119,6 +118,28 @@ public class Attack implements Initializable {
         mapImage.setVisible(true);
         heroLimits.setText(String.valueOf(opponentMaps.get(mapImageIndex).getHeroLimits()));
         heroLimits.setVisible(true);
+        if (SystemGame.player.getLevel()==1){
+            hero2.setVisible(false);
+            hero3.setVisible(false);
+            hero4.setVisible(false);
+            hero2number.setVisible(false);
+            hero3number.setVisible(false);
+            hero4number.setVisible(false);
+
+        }
+        if (SystemGame.player.getLevel()==2){
+            hero3.setVisible(false);
+            hero4.setVisible(false);
+            hero3number.setVisible(false);
+            hero4number.setVisible(false);
+
+        }
+        if (SystemGame.player.getLevel()==3){
+            hero4.setVisible(false);
+            hero4number.setVisible(false);
+        }
+
+
     }
     @FXML
     void hero1() {

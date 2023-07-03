@@ -9,8 +9,8 @@ import java.net.URISyntaxException;
 public class Elixir extends Building {
     public Elixir() throws URISyntaxException {
         HelloApplication helloApplication = new HelloApplication();
-        this.image=new ImageView(new Image(helloApplication.getClass().getResource("images/Elixir_Storage16.png").toURI().toString()));
-        this.buildingCategory= BuildingCategory.NORMAL;
-        this.health=20;
+        this.setImage(new ImageView(new Image(helloApplication.getClass().getResource("images/Elixir_Storage16.png").toURI().toString())));
+        this.setBuildingCategory( BuildingCategory.NORMAL);
+        this.setHealth(100);
     }
 }

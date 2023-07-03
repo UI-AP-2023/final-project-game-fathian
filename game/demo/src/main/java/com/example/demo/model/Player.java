@@ -73,4 +73,12 @@ public class Player {
     public void setMap(Map map) {
         this.map = map;
     }
+
+    public String getMapId() {
+        return mapId;
+    }
+
+    public void setMapId(String mapId) {
+        this.mapId = mapId;
+    }
 }

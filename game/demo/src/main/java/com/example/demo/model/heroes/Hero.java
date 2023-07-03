@@ -4,10 +4,29 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 public abstract class Hero{
-    ImageView image;
-    double health;
-    int selectedNumber=0;
-    Label number = new Label();
+    private ImageView image;
+    private double health;
+    private double speed;
+    private int power;
+
+    public int getPower() {
+        return power;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
+    private int selectedNumber=0;
+    private Label number = new Label();
 
     public Label getNumber() {
         return number;
@@ -39,5 +58,12 @@ public abstract class Hero{
 
     public void setImage(ImageView image) {
         this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return  "health:           " + health +"\n\n"+
+                "speed:            " + speed+"\n\n"+
+                "power:            " + power;
     }
 }

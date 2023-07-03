@@ -1,6 +1,8 @@
 package com.example.demo.dataBase;
 
+import com.example.demo.model.Map;
 import com.example.demo.model.Player;
+import com.example.demo.model.SystemGame;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -43,9 +45,25 @@ public class Players {
             Statement s = connection.prepareStatement(SQLCom);
             ResultSet resultSet =  s.executeQuery(SQLCom);
             ArrayList<Player> players = new ArrayList<>();
+
             while (resultSet.next()){
-                Player player=new Player(resultSet.getString("playerUsername"),resultSet.getString("password"),resultSet.getInt("level"),resultSet.getInt("wins"),resultSet.getInt("losses"),resultSet.getString("mapId"));
-                players.add(player);
+                String mapId=resultSet.getString("mapId");
+                boolean find=false;
+                for (Map map : SystemGame.maps){
+                    if (map.getMapId().equals(mapId)){
+                        find=true;
+                        Player player=new Player(resultSet.getString("playerUsername"),resultSet.getString("password"),resultSet.getInt("level"),resultSet.getInt("wins"),resultSet.getInt("losses"),map);
+                        players.add(player);
+                        SystemGame.maps.remove(map);
+                        SystemGame.selectedMaps.add(map);
+                        break;
+                    }
+                }
+                if (!find){
+                    Player player=new Player(resultSet.getString("playerUsername"),resultSet.getString("password"),resultSet.getInt("level"),resultSet.getInt("wins"),resultSet.getInt("losses"),mapId);
+                    players.add(player);
+                }
+
             }
             connection.close();
             return players;

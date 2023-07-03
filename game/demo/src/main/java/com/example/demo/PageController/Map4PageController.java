@@ -7,6 +7,7 @@ import com.example.demo.model.buildings.WallStone;
 import com.example.demo.model.buildings.WizardTower;
 import com.example.demo.model.heroes.*;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 
@@ -15,6 +16,11 @@ import java.net.URISyntaxException;
 import static com.example.demo.model.SystemGame.heroSelectedAttack;
 
 public class Map4PageController {
+    private int numberAddedHero1=0;
+    private int numberAddedHero2=0;
+    private int numberAddedHero3=0;
+    private int numberAddedHero4=0;
+    private int numberAddedHero5=0;
     public void addBuildings(Map map) throws URISyntaxException {
         addWalls(map);
         addWizardTower(map);
@@ -205,16 +211,62 @@ public class Map4PageController {
         map4.getBackGrand().setOnMouseClicked(event -> {
             if (heroSelectedAttack!=null){
                 try {
-                    if (heroSelectedAttack instanceof Hero1)
-                        heroSelectedAttack=new Hero1();
-                    else if (heroSelectedAttack instanceof Hero2)
-                        heroSelectedAttack=new Hero2();
-                    else if (heroSelectedAttack instanceof Hero3)
-                        heroSelectedAttack=new Hero3();
+                    if (heroSelectedAttack instanceof Hero1){
+                        if (numberAddedHero1 < heroSelectedAttack.getSelectedNumber()){
+                            numberAddedHero1++;
+                            heroSelectedAttack=new Hero1();
+                        }
+                        else {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setContentText("you cant use this hero");
+                            alert.show();
+                        }
+                    }
+                    else if (heroSelectedAttack instanceof Hero2){
+                        if (numberAddedHero2 < heroSelectedAttack.getSelectedNumber()){
+                            numberAddedHero2++;
+                            heroSelectedAttack=new Hero2();
+                        }
+                        else {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setContentText("you cant use this hero");
+                            alert.show();
+                        }
+                    }
+                    else if (heroSelectedAttack instanceof Hero3){
+                        if (numberAddedHero3 < heroSelectedAttack.getSelectedNumber()){
+                            numberAddedHero3++;
+                            heroSelectedAttack=new Hero3();
+                        }
+                        else {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setContentText("you cant use this hero");
+                            alert.show();
+                        }
+                    }
                     else if (heroSelectedAttack instanceof Hero4)
-                        heroSelectedAttack=new Hero4();
-                    else
-                        heroSelectedAttack=new Hero5();
+                    {
+                        if (numberAddedHero4 < heroSelectedAttack.getSelectedNumber()){
+                            numberAddedHero4++;
+                            heroSelectedAttack=new Hero4();
+                        }
+                        else {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setContentText("you cant use this hero");
+                            alert.show();
+                        }
+                    }
+                    else{
+                        if (numberAddedHero5 < heroSelectedAttack.getSelectedNumber()){
+                            numberAddedHero5++;
+                            heroSelectedAttack=new Hero5();
+                        }
+                        else {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setContentText("you cant use this hero");
+                            alert.show();
+                        }
+                    }
                 } catch (URISyntaxException e) {
                     throw new RuntimeException(e);
                 }

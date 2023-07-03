@@ -9,8 +9,8 @@ import java.net.URISyntaxException;
 public class Inferno extends Building {
     public Inferno() throws URISyntaxException {
         HelloApplication helloApplication = new HelloApplication();
-        this.image=new ImageView(new Image(helloApplication.getClass().getResource("images/Giga_Inferno14-5.png").toURI().toString()));
-        this.buildingCategory= BuildingCategory.NORMAL;
-        this.health=20;
+        this.setImage(new ImageView(new Image(helloApplication.getClass().getResource("images/Giga_Inferno14-5.png").toURI().toString())));
+        this.setBuildingCategory(BuildingCategory.NORMAL);
+        this.setHealth(50);
     }
 }

@@ -36,7 +36,7 @@ public class Heroes implements Initializable {
     private Label healthLabelValue;
 
     @FXML
-    private Label healthLabel;
+    private Label text;
     int imageIndex=0;
     @FXML
     void btNext(MouseEvent event) {
@@ -87,37 +87,34 @@ public class Heroes implements Initializable {
         if (SystemGame.heroes.get(imageIndex) instanceof Hero1){
             heroImage.setImage(((Hero1)(SystemGame.heroes.get(imageIndex))).getImage().getImage());
             heroImage.setVisible(true);
-            healthLabel.setVisible(true);
-            healthLabelValue.setText((String.valueOf(((Hero1)(SystemGame.heroes.get(imageIndex))).getHealth())));
-            healthLabelValue.setVisible(true);
+            text.setText(SystemGame.heroes.get(imageIndex).toString());
+            text.setVisible(true);
         }else if (SystemGame.heroes.get(imageIndex) instanceof Hero2){
             heroImage.setImage(((Hero2)(SystemGame.heroes.get(imageIndex))).getImage().getImage());
             heroImage.setVisible(true);
-            healthLabel.setVisible(true);
-            healthLabelValue.setText((String.valueOf(((Hero2)(SystemGame.heroes.get(imageIndex))).getHealth())));
-            healthLabelValue.setVisible(true);
+            text.setText(SystemGame.heroes.get(imageIndex).toString());
+            text.setVisible(true);
 
         }else if (SystemGame.heroes.get(imageIndex) instanceof Hero3){
             heroImage.setImage(((Hero3)(SystemGame.heroes.get(imageIndex))).getImage().getImage());
             heroImage.setVisible(true);
-            healthLabel.setVisible(true);
-            healthLabelValue.setText((String.valueOf(((Hero3)(SystemGame.heroes.get(imageIndex))).getHealth())));
-            healthLabelValue.setVisible(true);
+            text.setText(SystemGame.heroes.get(imageIndex).toString());
+            text.setVisible(true);
 
         }else if (SystemGame.heroes.get(imageIndex) instanceof Hero4){
             heroImage.setImage(((Hero4)(SystemGame.heroes.get(imageIndex))).getImage().getImage());
             heroImage.setVisible(true);
-            healthLabel.setVisible(true);
-            healthLabelValue.setText((String.valueOf(((Hero4)(SystemGame.heroes.get(imageIndex))).getHealth())));
-            healthLabelValue.setVisible(true);
+            text.setText(SystemGame.heroes.get(imageIndex).toString());
+            text.setVisible(true);
 
         }else if (SystemGame.heroes.get(imageIndex) instanceof Hero5){
+            text.setText(((Hero5)(SystemGame.heroes.get(imageIndex))).toString());
+            text.setVisible(true);
             heroImage.setImage(((Hero5)(SystemGame.heroes.get(imageIndex))).getImage().getImage());
             heroImage.setVisible(true);
-            healthLabel.setVisible(true);
-            healthLabelValue.setText((String.valueOf(((Hero5)(SystemGame.heroes.get(imageIndex))).getHealth())));
-            healthLabelValue.setVisible(true);
-
+//            healthLabel.setVisible(true);
+//            healthLabelValue.setText((String.valueOf(((Hero5)(SystemGame.heroes.get(imageIndex))).getHealth())));
+//            healthLabelValue.setVisible(true);
         }
     }
 }

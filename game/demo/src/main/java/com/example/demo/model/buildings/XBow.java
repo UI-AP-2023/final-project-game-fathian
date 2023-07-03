@@ -9,14 +9,8 @@ import java.net.URISyntaxException;
 public class XBow extends Building {
     public XBow() throws URISyntaxException {
         HelloApplication helloApplication = new HelloApplication();
-        this.image=new ImageView(new Image(helloApplication.getClass().getResource("images/X-Bow10_Ground.png").toURI().toString()));
-        this.buildingCategory= BuildingCategory.DEFENSE;
-        this.health=2000;
-        this.attackPower=10;
-        this.attackRadius=10;
-        this.speed=1;
+        this.setImage(new ImageView(new Image(helloApplication.getClass().getResource("images/X-Bow10_Ground.png").toURI().toString())));
+        this.setBuildingCategory(BuildingCategory.NORMAL);
+        this.setHealth(200);
     }
-    double attackPower;
-    double speed;
-    int attackRadius;
 }
